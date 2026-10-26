@@ -1,0 +1,8 @@
+.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 15px; }
+.stat-card { position: relative; display: flex; flex-direction: column; align-items: flex-start; min-height: 108px; padding: 15px; background: #fff; border: 1px solid #d6dde2; border-radius: 3px; }
+.stat-icon { position: absolute; top: 13px; right: 14px; display: grid; place-items: center; width: 27px; height: 27px; color: #2196d2; background: #eff7fb; border: 1px solid #dcecf4; border-radius: 3px; }
+.stat-icon svg { width: 16px; height: 16px; }
+.stat-label { padding-right: 30px; color: #6c7a86; font-size: 11px; }
+.stat-card strong { margin: 9px 0 4px; color: #27343f; font-size: 21px; line-height: 1; }
+.stat-card .budget-value { font-size: 19px; }
+.stat-card small { color: #87939d; font-size: 10px; }
