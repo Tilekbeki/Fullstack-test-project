@@ -7,79 +7,17 @@
   background: variables.$page-background;
   font-synthesis: none;
 }
-* { box-sizing: border-box; }
-body { min-width: 320px; margin: 0; }
-button, input { font: inherit; }
-button { cursor: pointer; }
-
-.app-shell { min-height: 100vh; padding-top: 58px; }
-.topbar {
-  position: fixed;
-  z-index: 20;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  height: 58px;
-  color: #f6f8fa;
-  background: variables.$header-background;
-  border-bottom: 1px solid #242a31;
+* {
+  box-sizing: border-box;
 }
-.brand {
-  display: flex;
-  flex: none;
-  align-items: center;
-  gap: 10px;
-  width: 218px;
-  height: 100%;
-  padding: 0 16px;
-  border-right: 1px solid #464c54;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -.3px;
+body {
+  min-width: 320px;
+  margin: 0;
 }
-.brand small { display: block; margin-top: 2px; color: #aeb8c1; font-size: 9px; font-weight: 400; letter-spacing: 1px; }
-.brand-mark { display: grid; place-items: center; width: 32px; height: 32px; color: #fff; background: variables.$accent; border-radius: 3px; font-size: 19px; }
-.menu-toggle { display: none; }
-.menu-backdrop { display: none; }
-.header-tools { display: none; align-items: center; gap: 14px; margin-left: auto; padding: 0 20px 0 0; }
-.profile-trigger { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; background: transparent; border: 0; border-radius: 50%; }
-.profile-trigger:hover .header-avatar { border-color: #b5dfff; }
-.profile-trigger:focus-visible { outline: 2px solid #77bff0; outline-offset: 2px; }
-.header-avatar { width: 31px; height: 31px; object-fit: cover; background: #f9fbfc; border: 2px solid #68727b; border-radius: 50%; }
-.profile-name { color: #303b45; font-size: 12px; font-weight: 600; white-space: nowrap; }
-
-.sidebar {
-  position: fixed;
-  top: 58px;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  width: 218px;
-  padding: 18px 0 12px;
-  color: #53616c;
-  background: #e8edf0;
-  border-right: 1px solid #d2dae0;
+button,
+input {
+  font: inherit;
 }
-.nav-item { display: flex; align-items: center; gap: 11px; width: 100%; min-height: 39px; padding: 8px 15px; color: #4b5965; background: transparent; border: 0; border-left: 3px solid transparent; text-align: left; font-size: 12px; font-weight: 600; }
-.nav-item svg { flex: none; width: 16px; height: 16px; color: #73818c; }
-.nav-item:hover { color: #147fb6; background: #dfe8ee; }
-.nav-item.active { color: #116e9f; background: #d8e7ef; border-left-color: #2196d2; }
-.nav-item.active svg { color: #2196d2; }
-.nav-item:focus-visible { outline: 2px solid #2196d2; outline-offset: -2px; }
-.sidebar-foot { display: flex; align-items: center; gap: 9px; margin-top: auto; padding: 14px 16px 0; border-top: 1px solid #d0d8de; font-size: 11px; }
-.avatar { width: 30px; height: 30px; object-fit: cover; background: #f9fbfc; border: 1px solid #cad6dd; border-radius: 50%; }
-
-.main { min-width: 0; min-height: calc(100vh - 58px); margin-left: 218px; }
-.content { max-width: 1600px; margin: auto; padding: 17px 22px 36px; }
-.page-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 16px; }
-h1 { margin: 0 0 3px; color: #25313c; font-size: 22px; font-weight: 700; }
-h2 { margin: 0 0 4px; color: #293642; font-size: 15px; font-weight: 700; }
-.page-heading p, .panel-title p, .overview-panel p { margin: 0; color: #73818d; font-size: 11px; }
-.section-tabs { display: flex; gap: 18px; height: 39px; margin-bottom: 15px; padding: 0 14px; overflow-x: auto; white-space: nowrap; background: #fff; border: 1px solid #d6dde2; border-radius: 3px; }
-.section-tabs button { flex: none; padding: 0 4px; color: #687785; background: transparent; border: 0; border-bottom: 2px solid transparent; font-size: 12px; font-weight: 600; }
-.section-tabs button:hover { color: #1785bd; }
-.section-tabs button.active { color: #1785bd; border-bottom-color: #2196d2; }
-.section-tabs button:focus-visible { outline: 2px solid #2196d2; outline-offset: -2px; }
+button {
+  cursor: pointer;
+}

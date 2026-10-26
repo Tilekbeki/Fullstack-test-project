@@ -7,8 +7,14 @@ export interface Project {
   start_date: string;
   priority: number;
 }
-export type ProjectInput = Pick<Project, 'name' | 'budget' | 'start_date' | 'priority' | 'owner_id'>;
-export interface Responsible { id: number; name: string }
+export type ProjectInput = Pick<
+  Project,
+  'name' | 'budget' | 'start_date' | 'priority' | 'owner_id'
+>;
+export interface Responsible {
+  id: number;
+  name: string;
+}
 export interface Task {
   id: number;
   project_id: number;
@@ -19,7 +25,12 @@ export interface Task {
   status_code: number;
 }
 export type TaskInput = Omit<Task, 'id' | 'project_id'>;
-export interface Overview { projects: number; tasks: number; budget: number; done: number }
+export interface Overview {
+  projects: number;
+  tasks: number;
+  budget: number;
+  done: number;
+}
 export type DashboardSection = 'overview' | 'projects' | 'responsibles';
 
 export interface ProjectQuery {
@@ -33,4 +44,3 @@ export interface ProjectQuery {
 }
 
 export type FilterKey = Exclude<keyof ProjectQuery, 'search'>;
-

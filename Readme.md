@@ -22,8 +22,10 @@ fullstack/
 │   └── src/
 │       ├── index.jsx       # единственный файл в корне src
 │       ├── style/          # переменные, общие и адаптивные SCSS-стили
-│       ├── components/     # App, каркас, фильтры и диалоги
-│       │   └── pages/      # страницы, index.js с экспортами и SCSS страниц
+│       ├── components/     # каждый компонент в своей папке: app/, dashboardLayout/,
+│       │   │               # portfolioStats/, projectFilterBar/, диалоги и иконки
+│       │   └── pages/      # index.js и папки overviewPage/, projectsPage/,
+│       │                   # responsiblesPage/ с TSX и SCSS внутри
 │       ├── hooks/          # состояние Dashboard и обработчики действий
 │       ├── services/       # API, IndexedDB и сохранение фильтров
 │       ├── models/         # типы данных и запросов
@@ -52,6 +54,10 @@ fullstack/
 ## Запуск
 
 Нужны Node.js 20.19+, npm и Docker с Compose. Ниже команды для трёх терминалов. Во всех примерах исходная папка — `fullstack/`.
+
+Если папка `fullstack/` опубликована как отдельный Git-репозиторий, сначала выполните в ней `npm ci`: это установит Husky с проверкой `client/` и `server/` перед push. Для самого приложения также нужны зависимости в каждой из этих папок, как указано ниже.
+
+Hook запускает форматирование и ESLint в обоих пакетах. Если Prettier изменит отслеживаемые файлы, push остановится до нового коммита.
 
 **Терминал 1 — PostgreSQL:**
 
@@ -93,7 +99,15 @@ docker compose exec -T db psql -U test_user -d test_dashboard -v ON_ERROR_STOP=1
 
 Миграция переносит существующие имена из проектов в таблицу ответственных, сохраняя проекты и задачи. Повторный запуск допустим.
 
-Проверки: `cd server && npm test && npm run build`; отдельно `cd client && npm run build`. Для интеграционной проверки CRUD на запущенном API выполните из `server/`: `TEST_API_URL=http://localhost:4000 npm run test:api`. Тест создаёт временные записи и удаляет их после проверки.
+Проверки из папок `server/` и `client/`:
+
+```bash
+npm run lint
+npm run format:check
+npm run build
+```
+
+В `server/` дополнительно выполните `npm test`. Для интеграционной проверки CRUD на запущенном API выполните из `server/`: `TEST_API_URL=http://localhost:4000 npm run test:api`. Тест создаёт временные записи и удаляет их после проверки. Команда `npm run format` форматирует исходники с двухпробельным отступом, шириной строки 90 символов и отдельной строкой для каждого JSX-атрибута.
 
 ## Скриншоты
 

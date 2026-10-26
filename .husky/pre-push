@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+set -e
+
+before_diff=$(git diff --binary -- .)
+
+npm run check:push
+
+after_diff=$(git diff --binary -- .)
+if [ "$before_diff" != "$after_diff" ]; then
+  echo 'Prettier изменил отслеживаемые файлы. Проверьте изменения, создайте коммит и повторите push.'
+  exit 1
+fi

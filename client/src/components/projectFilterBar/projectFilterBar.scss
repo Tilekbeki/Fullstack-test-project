@@ -1,0 +1,59 @@
+.project-filter-bar {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e1e6ea;
+  background: #fbfcfd;
+}
+.filter-main-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.filter-main-row .ant-input-search {
+  width: min(410px, 100%);
+}
+.filter-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.filter-field {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 4px 5px 4px 9px;
+  border: 1px solid #d7e0e6;
+  border-radius: 3px;
+  background: #fff;
+}
+.filter-field label {
+  color: #61717e;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.filter-field .ant-input,
+.filter-field .ant-input-number,
+.filter-field .ant-picker,
+.filter-field .ant-select {
+  width: 145px;
+}
+.filter-field .ant-input {
+  min-width: 130px;
+}
+.filter-remove {
+  width: 21px;
+  height: 21px;
+  padding: 0;
+  color: #71818c;
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  line-height: 18px;
+}
+.filter-remove:hover {
+  color: #c43b3b;
+}
+.filter-remove:focus-visible {
+  outline: 2px solid #2196d2;
+}

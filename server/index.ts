@@ -13,19 +13,31 @@ app.get('/api/health', async (_req, res, next) => {
   try {
     await db.one('SELECT 1 AS ok');
     res.json({ ok: true });
-  } catch (error) { next(error); }
+  } catch (error) {
+    next(error);
+  }
 });
 app.get('/api/overview', async (_req, res, next) => {
   try {
     const result = await db.one<{
-      projects: string; tasks: string; budget: string; done: string;
+      projects: string;
+      tasks: string;
+      budget: string;
+      done: string;
     }>(`SELECT
       (SELECT COUNT(*) FROM projects) AS projects,
       (SELECT COUNT(*) FROM tasks) AS tasks,
       (SELECT COALESCE(SUM(budget), 0) FROM projects) AS budget,
       (SELECT COUNT(*) FROM tasks WHERE status_code = 3) AS done`);
-    res.json({ projects: Number(result.projects), tasks: Number(result.tasks), budget: Number(result.budget), done: Number(result.done) });
-  } catch (error) { next(error); }
+    res.json({
+      projects: Number(result.projects),
+      tasks: Number(result.tasks),
+      budget: Number(result.budget),
+      done: Number(result.done),
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 app.use('/api/projects', projectRoutes);
 app.use('/api/responsibles', responsibleRoutes);
@@ -41,7 +53,11 @@ const errors: ErrorRequestHandler = (error: unknown, _req, res, _next) => {
     res.status(400).json({ error: 'Некорректный JSON' });
     return;
   }
-  if (['23503', '23514', '23502', '22001', '22003', '22007', '22008', '22P02'].includes(code ?? '')) {
+  if (
+    ['23503', '23514', '23502', '22001', '22003', '22007', '22008', '22P02'].includes(
+      code ?? '',
+    )
+  ) {
     res.status(400).json({ error: 'Данные нарушают ограничения базы данных' });
     return;
   }

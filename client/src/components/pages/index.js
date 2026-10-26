@@ -1,3 +1,3 @@
-export { OverviewPage } from './OverviewPage';
-export { ProjectsPage } from './ProjectsPage';
-export { ResponsiblesPage } from './ResponsiblesPage';
+export { OverviewPage } from './overviewPage/OverviewPage';
+export { ProjectsPage } from './projectsPage/ProjectsPage';
+export { ResponsiblesPage } from './responsiblesPage/ResponsiblesPage';

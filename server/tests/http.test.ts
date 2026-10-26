@@ -1,6 +1,14 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { HttpError, decimal, paging, positiveInt, isoDate, rangeInt, record } from '../lib/http';
+import {
+  HttpError,
+  decimal,
+  paging,
+  positiveInt,
+  isoDate,
+  rangeInt,
+  record,
+} from '../lib/http';
 
 test('pagination accepts AG Grid ranges and rejects invalid input', () => {
   assert.deepEqual(paging({ limit: '20', offset: '40' }), { limit: 20, offset: 40 });

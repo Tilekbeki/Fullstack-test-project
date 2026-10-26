@@ -1,8 +1,11 @@
 @use './base';
-@use '../components/portfolioStats';
-@use '../components/pages/projectsPage';
+@use '../components/dashboardLayout/dashboardLayout';
+@use '../components/portfolioStats/portfolioStats';
+@use '../components/pages/projectsPage/projectsPage';
+@use '../components/projectFilterBar/projectFilterBar';
+@use '../components/pages/projectsPage/projectsTables';
 @use './forms';
-@use '../components/pages/responsiblesPage';
-@use '../components/pages/overviewPage';
+@use '../components/pages/responsiblesPage/responsiblesPage';
+@use '../components/pages/overviewPage/overviewPage';
 @use './controls';
 @use './responsive';

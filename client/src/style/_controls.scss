@@ -1,9 +1,27 @@
-.ant-btn { box-shadow: none !important; font-weight: 600; }
-.ant-btn-default { background: #f4f6f7; }
-.ant-btn-default:hover { background: #e9f2f7 !important; }
-.ant-modal .ant-modal-content { border-radius: 3px; }
-.ant-modal .ant-modal-header { margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #e1e6ea; }
-.ant-input, .ant-input-number, .ant-picker, .ant-select-selector { background: #fafbfc !important; }
+.ant-btn {
+  box-shadow: none !important;
+  font-weight: 600;
+}
+.ant-btn-default {
+  background: #f4f6f7;
+}
+.ant-btn-default:hover {
+  background: #e9f2f7 !important;
+}
+.ant-modal .ant-modal-content {
+  border-radius: 3px;
+}
+.ant-modal .ant-modal-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e1e6ea;
+}
+.ant-input,
+.ant-input-number,
+.ant-picker,
+.ant-select-selector {
+  background: #fafbfc !important;
+}
 .dashboard-message {
   top: auto !important;
   right: 16px !important;
@@ -12,7 +30,9 @@
   width: min(360px, calc(100vw - 32px)) !important;
   transform: none !important;
 }
-.dashboard-message .dashboard-message-notice-wrapper { text-align: right; }
+.dashboard-message .dashboard-message-notice-wrapper {
+  text-align: right;
+}
 .dashboard-message .dashboard-message-notice-content {
   max-width: 100%;
   border: 1px solid #d6dde2;
